@@ -1,12 +1,13 @@
 <template>
-  <Header></Header>
+  <Header />
+  <Social />
   <section class="hero-content">
     <div class="hero-one">
       <h1>Hi 👋</h1>
     </div>
     <div class="hero-two">
-      <h2>I'm Mariana Morais.</h2>
-      <h2>I'm <span class="frontend">Front-End Developer.</span></h2>
+      <h2>I'm Mariana Morais,</h2>
+      <h2><span class="frontend">Front-End Developer.</span></h2>
     </div>
     <div class="hero-three">
       <p>
@@ -16,37 +17,28 @@
       </p>
     </div>
     <div class="hero-four">
-      <a href="">
-        <svg width="277" height="100">
-          <defs>
-            <linearGradient id="grad1">
-              <stop offset="0%" stop-color="#FFFFFF" />
-              <stop offset="100%" stop-color="#FFFFFF" />
-            </linearGradient>
-          </defs>
-          <rect
-            x="1"
-            y="1"
-            rx="4"
-            fill="none"
-            stroke="url(#grad1)"
-            width="200"
-            height="50"
-          ></rect>
-        </svg>
-        <span>Get in touch</span>
-      </a>
+      <a href="mailto:marianamorais.dev@gmail.com">Contact me</a>
     </div>
+    <About />
+    <Projects />
+    <hr class="section-divider2" />
   </section>
+  
 </template>
 
 <script>
 // import Container from '../components/Container';
 import Header from "../components/Header";
+import Social from "../components/Social";
+import About from '../components/About';
+import Projects from '../components/Projects';
 
 export default {
   components: {
     Header,
+    Social,
+    About,
+    Projects
   },
 };
 </script>
@@ -57,18 +49,22 @@ export default {
 .hero-content {
   display: flex;
   flex-direction: column;
-  max-width: 1160px;
+  max-width: 1000px;
   margin: 0 auto;
   .hero-one {
     font-size: 0.7rem;
     margin-bottom: 25px;
   }
   .hero-two {
-    font-size: 2.4rem;
-    padding-right: 300px;
+    font-size: 3.2rem;
+    padding-right: 200px;
+    @media (max-width: 767px) {
+      font-size: 2rem;
+      padding: 0;
+    }
     .frontend {
-      animation: flow 3s ease-in infinite;
-      background: linear-gradient(-60deg, #ffa568, #e26f8f, #cf7cb7, #ffa568);
+      animation: flow 5s ease-in infinite;
+      background: linear-gradient(-60deg, #ff934b, #e26f8f, #9370d3, #FD6585, #2e2e2e);
       background-size: 300%;
 
       -webkit-background-clip: text;
@@ -90,91 +86,47 @@ export default {
       }
     }
   }
+  .section-divider2 {
+    margin: 100px 0;
+    display: block;
+    border: none;
+    background: linear-gradient(-60deg, #2e2e2e, #ff934b, #9370d3, #FD6585, #2e2e2e);
+    height: 1px;
+    width: 90%;
+    align-self: center;
+  }
 }
 
 .hero-three p {
-  padding-right: 300px;
-  font-size: 1.2rem;
+  padding-right: 20%;
+  font-size: 1.1rem;
   line-height: 30px;
-  margin-top: 20px;
+  margin-top: 35px;
+  font-weight: 400;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 .hero-four {
-  margin-top: 30px;
-  position: relative;
-  width: 200px;
-  height: 50px;
-  font-size: 1em;
-  line-height: 55px;
+  margin-top: 40px;
+  width: 123px;
+  padding: 14px;
   text-align: center;
-  background-color: transparent;
+  font-size: 1rem;
   cursor: pointer;
+
+  border: 1px solid;
+  border-image: linear-gradient(45deg, #ff934b, #e26f8f, #9b618a, #2e2e2e) 1;
+  line-height: 1;
   text-decoration: none;
-  font-weight: 900;
-  font-size: 1.1rem;
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    rect {
-      stroke-width: 3;
-      stroke-dasharray: 250, 0;
-      stroke-dashoffset: 0;
-      -webkit-transition: all 600ms ease;
-      transition: all 600ms ease;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    &:hover{
+      background-color: #080808;
     }
-  }
-  span {
-    background: rgb(255, 130, 130);
-    background: -moz-linear-gradient(
-      left,
-      rgba(255, 130, 130, 1) 0%,
-      rgba(225, 120, 237, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      left,
-      rgba(255, 130, 130, 1) 0%,
-      rgba(225, 120, 237, 1) 100%
-    );
-    background: linear-gradient(
-      to right,
-      rgba(255, 130, 130, 1) 0%,
-      rgba(225, 120, 237, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &:hover svg rect {
-    stroke-width: 4;
-    stroke-dasharray: 196, 543;
-    stroke-dashoffset: 495;
+  a {
+    color: #eeeeee;
+    text-decoration: none;
   }
 }
-
-// .hero-four{
-//   margin-top: 50px;
-
-//     a {
-//       width: 8%;
-//       font-size: 1rem;
-//       text-align: center;
-//       color: #ffffff;
-//       background-color: transparent;
-//       border: 1.5px solid #ffffff;
-//       border-radius: 4px;
-//       padding: 1.25rem 1.75rem;
-//       line-height: 1;
-//       text-decoration: none;
-//       cursor: pointer;
-//       box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-//   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-//       &:hover{
-//         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-//         background-image: linear-gradient(to right, #DD5E89 0%, #F7BB97 51%, #DD5E89 100%)
-//       }
-//     }
-// }
 </style>

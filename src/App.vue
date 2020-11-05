@@ -16,6 +16,7 @@ export default {
 
 <style lang="less">
   @import './assets/styles/global.less';
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700;800&display=swap');
 
 * {
   .reset();
@@ -27,6 +28,8 @@ export default {
 
 body {
   .colors();
+  font-family: 'Raleway', sans-serif;
+  box-sizing: border-box;
 }
 
 </style>
