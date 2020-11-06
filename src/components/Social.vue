@@ -73,6 +73,9 @@
       background: linear-gradient(-60deg, #2e2e2e, #ff934b, #9370d3, #FD6585, #2e2e2e);
     }
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 .social-right {
   width: 40px;
@@ -82,6 +85,10 @@
   right: 40px;
   z-index: 10;
   color: white;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 
   .email {
     display: flex;
@@ -115,14 +122,5 @@
       background: linear-gradient(-60deg, #2e2e2e, #ff934b, #9370d3, #FD6585, #2e2e2e);
     }
   }
-
-
 }
-
 </style>
-
-<script>
-export default {
-  
-}
-</script>

@@ -12,7 +12,6 @@
         </p>
         <br />
         <p>Here are a few technologies I've been studying recently:</p>
-
         <ul class="skills">
           <li>HTML</li>
           <li>CSS & Less</li>
@@ -22,38 +21,28 @@
           <li>Wordpress</li>
         </ul>
       </div>
-
       <div class="about-pic">
         <img src="../assets/images/me.png" alt="Mariana" />
       </div>
     </div>
-    <hr class="section-divider" />
   </section>
 </template>
 
-<script>
-export default {};
-</script>
-
 <style lang="less">
+@import "../assets/styles/global.less";
+
 .about-content {
   display: flex;
   flex-direction: column;
   max-width: 1000px;
   margin: 95px auto;
 
-  .section-divider {
-    display: block;
-    border: none;
-    background: linear-gradient(-60deg, #2e2e2e, #ff934b, #9370d3, #FD6585, #2e2e2e);
-    height: 1px;
-    width: 90%;
-    align-self: center;
-  }
-
   h1 {
     margin: 80px 0 0 0;
     font-size: 1.8rem;
+    @media (max-width: 768px) {
+      margin: 0;
+    }
   }
 
   .content {
@@ -77,7 +66,7 @@ export default {};
           position: absolute;
           left: 0px;
           font-size: 1.1rem;
-          color: #ff934b;
+          color: @orange-color;
         }
       }
     }
@@ -99,17 +88,13 @@ export default {};
     position: relative;
     width: 300px;
     height: 450px;
-    background: linear-gradient(
-      45deg,
-      #ff934b94,
-      #e26f904f,
-      #9370d350,
-      #2e2e2eb9
-    );
-    margin-bottom: 100px;
+    background: @gradient-img;
     border: 2px solid;
-    border-image: linear-gradient(45deg, #ff934b, #e26f8f, #9b618a, #2e2e2e) 1;
-
+    border-image: @gradient;
+    @media (max-width: 768px) {
+      align-self: center;
+      margin: 50px 0 0 0px;
+    }
     img {
       width: 300px;
       height: 450px;

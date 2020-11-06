@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="project-image">
-              <a href="https://gardencraft.netlify.app/" target="_blank">
+              <a href="https://coffeelog.netlify.app/" target="_blank">
                 <img
                   src="../assets/images/projects/coffeelog.png"
                   alt="Coffeelog"
@@ -69,6 +69,8 @@
 </template>
 
 <style lang="less">
+@import "../assets/styles/global.less";
+
 .projects-content {
   h1 {
     font-size: 1.8rem;
@@ -80,16 +82,16 @@
     gap: 48px;
     position: relative;
     margin-top: 50px;
+    @media (max-width: 768px) {
+      text-align: center;
+      text-align: -webkit-center;
+    }
 
     .project {
       transition-delay: 0ms;
       visibility: visible;
       opacity: 1;
-      transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
-        opacity 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s,
-        transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
-
+    
       .project-content {
         width: 243px;
         display: flex;
@@ -101,11 +103,10 @@
         position: relative;
         height: 100%;
         padding: 2rem 1.75rem;
-        background-color: #1b1b1b;
-        transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        background-color: @light-black;
+        transition: @transition;
         border: 1px solid;
-        border-image: linear-gradient(45deg, #ff934b, #e26f8f, #9b618a, #2e2e2e)
-          1;
+        border-image: @gradient;
 
         header {
           padding: 0;
@@ -117,18 +118,18 @@
             padding: 0;
             .project-title h3 {
               margin: 0px 0px 20px;
-              color: white;
+              color: @white-color;
               font-size: 1.2rem;
               letter-spacing: 1px;
               font-weight: 500;
             }
             .project-rep a {
               font-size: 1.2rem;
-              color: white;
-              transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+              color: @white-color;
+              transition: @transition;
               cursor: pointer;
               &:hover{
-                color: #e26f8f;
+                color: @orange-color;
               }
             }
           }
@@ -141,15 +142,14 @@
               height: 175px;
               z-index: -2;
               
-              filter: drop-shadow(0px 0px 0px #363636);
-              transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-
+              filter: drop-shadow(0px 0px 0px @light-orange);
+              transition: @transition;
               &:hover {
-                filter: drop-shadow(3px 3px 4px #363636);              }
+                filter: drop-shadow(2px 2px 2px @light-orange);              
+              }
             }
           }
         }
-        
         footer {
           .project-techs {
             display: flex;

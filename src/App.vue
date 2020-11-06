@@ -1,15 +1,16 @@
 <template>
   <div class="container">
-    <router-view></router-view>
+    <Home />
   </div>
 </template>
 
 <script>
+import Home from './views/Home'
 
 export default {
   name: 'App',
   components: {
-    
+    Home
   }
 }
 </script>
@@ -27,8 +28,9 @@ export default {
 }
 
 body {
-  .colors();
-  font-family: 'Raleway', sans-serif;
+  background: @black;
+  color: @white-color;
+  font-family: @raleway;
   box-sizing: border-box;
 }
 
