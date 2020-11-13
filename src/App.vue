@@ -27,11 +27,22 @@ export default {
   .container();
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+  height: 10%;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(-60deg, #131313, #ff934b, #9370d3, #FD6585, #1a1a1a);
+  transition: @transition;
+}
+
 body {
   background: @black;
   color: @white-color;
   font-family: @raleway;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 </style>

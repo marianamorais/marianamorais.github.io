@@ -1,8 +1,9 @@
 <template>
   <section class="projects-content">
     <h1>My projects</h1>
+    <h3>Soon!</h3>
     <div class="projects-grid">
-      <div class="project">
+      <!-- <div class="project">
         <div class="project-content">
           <header>
             <div class="first">
@@ -63,7 +64,7 @@
             </ul>
           </footer>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
@@ -75,6 +76,11 @@
   h1 {
     font-size: 1.8rem;
     text-align: center;
+  }
+  h3 {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 20px;
   }
   .projects-grid {
     display: grid;
